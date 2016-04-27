@@ -11,12 +11,12 @@ describe('arrays', function() {
   });
 
   it('you should be able to determine the location of an item in an array', function() {
-    expect(arraysAnswers.indexOf(a, 3)).to.eql(2);
-    expect(arraysAnswers.indexOf(a, 5)).to.eql(-1);
+    expect(a.indexOf(3)).to.eql(2);
+    expect(a.indexOf(5)).to.eql(-1);
   });
 
   it('you should be able to add the values of an array', function() {
-    expect(arraysAnswers.sum(a)).to.eql(10);
+    expect( arraysAnswers.sum(a)).to.eql(10);
   });
 
   it('you should be able to remove all instances of a value from an array', function() {
@@ -37,12 +37,16 @@ describe('arrays', function() {
     expect(result).to.have.length(3);
     expect(result.join(' ')).to.eql('1 3 4');
 
+    a = result;
+
     // make sure that you return the same array instance
     expect(result).equal(a);
   });
 
   it('you should be able to add an item to the end of an array', function() {
     var result = arraysAnswers.append(a, 10);
+
+    console.log(result);
 
     expect(result).to.have.length(5);
     expect(result[result.length - 1]).to.eql(10);
@@ -86,6 +90,8 @@ describe('arrays', function() {
 
   it('you should be able to count the occurences of an item in an array', function() {
     var result = arraysAnswers.count([ 1, 2, 4, 4, 3, 4, 3 ], 4);
+
+    console.log(result);
 
     expect(result).to.eql(3);
   });
